@@ -14,8 +14,7 @@ spec:
     - port: 8080
       targetPort: 8080
   selector:
-    app: jenkins
-    
+    app: jenkins  
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
