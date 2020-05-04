@@ -47,3 +47,4 @@ spec:
           hostPath:
             path: /tmp/jenkins
             type: Directory
+ 
