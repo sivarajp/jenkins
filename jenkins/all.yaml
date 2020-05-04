@@ -31,6 +31,9 @@ spec:
       labels:
         app: jenkins
     spec:
+      securityContext:
+        fsGroup: 2000
+        runAsUser: 1000    
       containers:
       - name: jenkins
         image: jenkins:2.60.3
