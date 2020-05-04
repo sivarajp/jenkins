@@ -51,6 +51,14 @@ metadata:
   namespace: ingress-nginx
 rules:
   - apiGroups:
+    - extensions
+    resources:
+    - podsecuritypolicies
+    resourceNames:
+    - vmware-system-tmc-privileged
+    verbs:
+    - use
+  - apiGroups:
       - ''
     resources:
       - configmaps
@@ -143,6 +151,14 @@ metadata:
   name: ingress-nginx
   namespace: ingress-nginx
 rules:
+  - apiGroups:
+    - extensions
+    resources:
+    - podsecuritypolicies
+    resourceNames:
+    - vmware-system-tmc-privileged
+    verbs:
+    - use
   - apiGroups:
       - ''
     resources:
