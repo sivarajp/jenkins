@@ -59,4 +59,3 @@ spec:
         - name: jenkins-home
           persistentVolumeClaim:
              claimName: jenkins-volume-pvc
- 
