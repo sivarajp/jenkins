@@ -15,6 +15,19 @@ spec:
       targetPort: 8080
   selector:
     app: jenkins
+    
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: jenkins-volume-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: default
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -44,7 +57,6 @@ spec:
           mountPath: /var/jenkins_home
       volumes:
         - name: jenkins-home
-          hostPath:
-            path: /tmp/jenkins
-            type: Directory
+          persistentVolumeClaim:
+             claimName: jenkins-volume-pvc
  
