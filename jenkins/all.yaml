@@ -21,6 +21,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: jenkins-volume-pvc
+  namespace: jenkins
 spec:
   accessModes:
     - ReadWriteOnce
