@@ -30,8 +30,12 @@ metadata:
   namespace: jenkins
 spec:
   ports:
-    - port: 8080
+    - name: jenkins
+      port: 8080
       targetPort: 8080
+    - name: jenkins-agent
+      port: 50000
+      targetPort: 50000
   selector:
     app: jenkins  
 ---
