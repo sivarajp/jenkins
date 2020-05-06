@@ -5,6 +5,25 @@ metadata:
   name: jenkins
 ---
 apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: jenkins
+  namespace: default
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: jenkins
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: jenkins
+  namespace: jenkins
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: jenkins
@@ -44,6 +63,7 @@ spec:
       labels:
         app: jenkins
     spec:
+      serviceAccount: jenkins
       securityContext:
         fsGroup: 2000
         runAsUser: 1000    
