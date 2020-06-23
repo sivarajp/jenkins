@@ -13,4 +13,3 @@ ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 # use this for creating default admin user
 COPY scripts /usr/share/jenkins/ref/init.groovy.d/
 
-
