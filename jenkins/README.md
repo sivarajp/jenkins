@@ -23,7 +23,7 @@ kubectl create cm jenkins-cm -n jenkins --from-literal=CREDENTIAL_ID=github-cred
  kubectl apply -f all.yaml
 ```
 
-5. You can setup ingress of ur choice. If you need local port forward 
+5. You can setup ingress of ur choice. If you need local port forward.
 
 ```sh
  kubectl port-forward svc/jenkins -n jenkins 8080:8080
