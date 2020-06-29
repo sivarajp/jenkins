@@ -16,3 +16,15 @@ kubectl create ns jenkins
 ```sh
 kubectl create cm jenkins-cm -n jenkins --from-literal=CREDENTIAL_ID=github-credentials  --from-literal=ORG_FOLDER_NAME=kube-ci  --from-literal=GIT_ORG= --from-literal=SHARED_PIPELINE_URL=https://github.com/sivarajp/jenkins-shared-pipeline.git
 ```
+
+4. Apply jenkins yaml
+
+```sh
+ kubectl apply -f all.yaml
+```
+
+5. You can setup ingress of ur choice. If you need local port forward 
+
+```sh
+ kubectl port-forward svc/jenkins -n jenkins 8080:8080
+```
