@@ -1,4 +1,12 @@
-Please do the following
+### Jenkins installation
+
+Please do the following to install jenkins
+
+
+
+##### Prerequisites:
+      1. Github user/token
+      2. Registry user/token
 
 1. Create Jenkins namespace
 
