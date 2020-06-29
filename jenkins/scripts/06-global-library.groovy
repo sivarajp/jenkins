@@ -33,7 +33,7 @@ for (LibraryConfiguration lib : globalLibraries.getLibraries()) {
 }
 
 if (exists) {
-    println("Global Library with name ${libConfigName} already exists")
+    println("Global Library with name ${sharedLibProperties.name} already exists")
 } else {
     def jenkins = Jenkins.get()
     def newSharedLib = new LibraryConfiguration(sharedLibProperties.name, scmRetriever)
