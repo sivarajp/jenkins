@@ -23,6 +23,7 @@ if (!Jenkins.instance.getItem(env.ORG_FOLDER_NAME)) {
         navigator.traits = [
             new BranchDiscoveryTrait(1), // Exclude branches that are also filed as PRs.
             new OriginPullRequestDiscoveryTrait(1), // Merging the pull request with the current target branch revision.
+            new SubmoduleOptionTrait(new SubmoduleOption(false, true, false, null, null, true)),
         ]
         job.getNavigators().replace(navigator)
         job.scheduleBuild(10)
